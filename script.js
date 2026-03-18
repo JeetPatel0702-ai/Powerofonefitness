@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const formSuccess = document.getElementById('form-success');
   const submitBtn = document.getElementById('submit-btn');
 
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbxpBNuZ3LgO6Jz96In_C9Xt7nonJE7yPRWhmglQzKh0awkXDS5C3M0XthjniTCKdj4FRA/exec';
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzR8DWVPrqkvtxQN7DQUMnIY3bDa_uY_v8i4UxFgiwtozMafcKbOMCVvq6jjR1ay_UuVg/exec';
 
   if (enquiryForm) {
     // Create hidden iframe for form submission (bypasses CORS completely)
