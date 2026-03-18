@@ -139,9 +139,11 @@ ul{list-style:none}
   backdrop-filter:blur(8px);
 }
 .btn-glass:hover{
-  background:var(--glass-hover);
-  border-color:rgba(255,255,255,0.15);
-  transform:translateY(-2px);
+  background:var(--gradient-main);
+  border-color:transparent;
+  box-shadow:0 8px 32px rgba(108,99,255,0.5);
+  transform:translateY(-3px);
+  color:#fff;
 }
 
 .btn-full{width:100%}
