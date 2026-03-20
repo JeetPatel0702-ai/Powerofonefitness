@@ -28,7 +28,7 @@
 
 /* RESET */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden}
 body{
   font-family:var(--font-body);
   background:var(--bg);
@@ -175,7 +175,7 @@ ul{list-style:none}
 }
 .navbar-inner{display:flex;justify-content:space-between;align-items:center}
 
-.logo{display:flex;align-items:center;gap:12px;z-index:1001}
+.logo{display:flex;align-items:center;gap:12px;z-index:1001;position:relative}
 .logo-mark{
   width:36px;height:36px;
   border-radius:10px;
@@ -188,7 +188,7 @@ ul{list-style:none}
 nav#nav-menu{display:flex;align-items:center;gap:32px}
 .nav-links{display:flex;gap:28px;font-size:14px;font-weight:500;color:var(--text-muted)}
 .nav-links a:hover{color:var(--text-white)}
-.hamburger{display:none;cursor:pointer;flex-direction:column;gap:5px;z-index:1001}
+.hamburger{display:none;cursor:pointer;flex-direction:column;gap:5px;z-index:1001;position:relative}
 .hamburger span{display:block;width:24px;height:2px;background:var(--text-white);transition:all var(--transition);border-radius:2px}
 
 /* HERO */
@@ -357,7 +357,7 @@ nav#nav-menu{display:flex;align-items:center;gap:32px}
 }
 
 .review-card{
-  width:380px;flex-shrink:0;padding:28px;
+  width:clamp(280px,80vw,380px);flex-shrink:0;padding:28px;
 }
 .rev-top{display:flex;align-items:center;gap:14px;margin-bottom:16px}
 .rev-avatar{
@@ -390,7 +390,7 @@ input,select,textarea{
   border:1px solid var(--border);
   border-radius:10px;
   color:var(--text-white);
-  font-family:var(--font-body);font-size:15px;
+  font-family:var(--font-body);font-size:16px;
   transition:all var(--transition);
 }
 input:focus,select:focus,textarea:focus{
@@ -499,6 +499,7 @@ select option{
 }
 
 @media(max-width:768px){
+  .container{padding:0 20px}
   .section-pad{padding:64px 0}
   .hamburger{display:flex}
   
@@ -520,10 +521,15 @@ select option{
   
   .services-grid,.pricing-grid{grid-template-columns:1fr}
   .form-grid{grid-template-columns:1fr}
-  .hero-stats-bar{flex-wrap:wrap;gap:16px;padding:20px 24px}
+  .hero-stats-bar{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+    padding:24px;
+  }
   .h-stat-divider{display:none}
   .footer-inner{grid-template-columns:1fr;gap:32px}
-  .hero-actions{flex-direction:column}
+  .hero-actions{flex-direction:column;gap:16px}
   .hero-actions .btn{width:100%}
   .cursor-glow{display:none}
 }
