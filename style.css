@@ -495,10 +495,13 @@ select option{
   .services-grid{grid-template-columns:repeat(2,1fr)}
   .pricing-grid{grid-template-columns:1fr}
   .footer-inner{grid-template-columns:1fr 1fr}
-  .hero-card img{height:350px}
+  .hero-card img{height:auto;aspect-ratio:16/9;object-position:center top;}
 }
 
 @media(max-width:768px){
+  h1{font-size:clamp(30px, 9vw, 42px); word-break: break-word;}
+  h2{font-size:clamp(28px, 8vw, 36px);}
+  
   .container{padding:0 20px}
   .section-pad{padding:64px 0}
   .hamburger{display:flex}
@@ -519,17 +522,27 @@ select option{
   .hamburger.active span:nth-child(2){opacity:0}
   .hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
   
+  .hero{padding-top:120px;text-align:center;}
+  .hero-content{gap:32px;}
+  .hero-left{display:flex;flex-direction:column;align-items:center;}
+  .hero-sub{margin:16px auto 32px;text-align:center;}
+  
+  .hero-actions{flex-direction:column;gap:16px;width:100%;max-width:280px;align-items:center;}
+  .hero-actions .btn{width:100%;padding:14px 20px;}
+  .btn-glass{background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.25);}
+  
+  .hero-card{max-width:400px;margin:0 auto}
+  .hero-card img{height:auto;aspect-ratio:16/9;object-position:center center;}
+  
   .services-grid,.pricing-grid{grid-template-columns:1fr}
   .form-grid{grid-template-columns:1fr}
   .hero-stats-bar{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:24px;
-    padding:24px;
+    gap:16px;
+    padding:20px;
   }
   .h-stat-divider{display:none}
   .footer-inner{grid-template-columns:1fr;gap:32px}
-  .hero-actions{flex-direction:column;gap:16px}
-  .hero-actions .btn{width:100%}
   .cursor-glow{display:none}
 }
